@@ -1,0 +1,22 @@
+@mixin button {
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  width: 200px;
+  height: 45px;
+  background-color: $main-green;
+
+  font-family: $mont;
+  font-weight: 600;
+  font-size: 18px;
+  color: #1a1818;
+  transition: background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &:hover {
+    background-color: $green-hover;
+  }
+  &:active,
+  &:focus-visible {
+    background-color: $green-active;
+  }
+}

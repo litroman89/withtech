@@ -1,0 +1,9 @@
+@import "./reset.scss";
+@import "./fonts.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
+
+@import "src/modules/hero/hero";
+@import "src/modules/steps/steps";
+@import "src/modules/points/points";
+@import "src/modules/footer/footer";

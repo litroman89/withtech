@@ -1,0 +1,107 @@
+.footer {
+  padding: 24px 0 40px;
+  background: #0e1622;
+
+  .container {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1760px;
+  }
+
+  .footer__wrapper {
+    &__nav {
+      display: flex;
+      justify-content: space-between;
+
+      &__item {
+        & > h6 {
+          font-family: $mont;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 181%;
+          text-transform: capitalize;
+
+          &:nth-of-type(2) {
+            margin-top: 24px;
+          }
+        }
+
+        & > nav {
+          & > ul {
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+
+            & > li {
+              & > a {
+                width: max-content;
+                position: relative;
+                display: flex;
+                gap: 4px;
+                align-items: center;
+                font-family: $mont;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 257%;
+                text-transform: capitalize;
+                color: $text-color;
+
+                &::after {
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  bottom: 10px;
+                  width: 0;
+                  height: 1px;
+                  background: $text-color;
+                  transition: width 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                }
+
+                &:hover {
+                  &::after {
+                    width: 100%;
+                  }
+                }
+
+                & > span {
+                  font-size: 9px;
+                  color: $text-color;
+                }
+              }
+            }
+          }
+        }
+
+        .btn-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          & > .appbtn {
+            height: 45px;
+            width: 152px;
+            background: #fff;
+            outline: 1px solid #000;
+            border-radius: 6px;
+            display: grid;
+            place-items: center;
+          }
+        }
+
+        .socialbtn-wrapper {
+          margin-top: 8px;
+          display: flex;
+          gap: 8px;
+          .socialbtn {
+            height: 43px;
+            width: 42px;
+            border-radius: 5px;
+            background: #2f3b52;
+            display: grid;
+            place-items: center;
+          }
+        }
+      }
+    }
+  }
+}

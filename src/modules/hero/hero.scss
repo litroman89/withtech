@@ -1,0 +1,174 @@
+.hero {
+  position: relative;
+  background: url("/img/main/desktop-bg.jpg") no-repeat 90% / cover;
+  height: 100dvh;
+  padding: 40px 24px 0;
+
+  .container {
+    margin: 0 auto;
+    max-width: 1170px;
+    height: 100%;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+      position: relative;
+      width: 181px;
+      height: 76px;
+      display: grid;
+      place-items: center;
+
+      & > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      gap: 16px;
+
+      & > a {
+        border: 2px solid $main-green;
+        border-radius: 8px;
+        width: 120px;
+        height: 50px;
+        display: grid;
+        place-items: center;
+
+        font-family: $mont;
+        font-weight: 600;
+        font-size: 18px;
+        color: #fff;
+        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        &:hover {
+          background: rgba(4, 248, 3, 0.2);
+        }
+        &:active,
+        &:focus-visible {
+          background: transparent;
+          border: 1px solid $green-active;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    margin-top: 80px;
+    width: 100%;
+
+    & > h2 {
+      width: 515px;
+      font-family: $mont;
+      font-weight: 800;
+      font-size: 42px;
+      line-height: 118%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    & > a {
+      margin-top: 40px;
+      @include button;
+    }
+  }
+}
+
+@media (max-aspect-ratio: 1.2/1) {
+  .hero {
+    background: url("/img/main/tablet-bg.jpg") no-repeat center top / cover;
+
+    &__wrapper {
+      position: absolute;
+      bottom: 64px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      & > h2 {
+        margin: 0 auto;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        max-width: 576px;
+        width: 566px;
+        text-align: center;
+
+        & > span {
+          font-weight: 800;
+          font-style: italic;
+          text-wrap: nowrap;
+        }
+      }
+
+      & > a {
+        margin: 30px auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background: url("/img/main/tablet-bg.jpg") no-repeat center top / cover;
+
+    &__wrapper {
+      position: absolute;
+      bottom: 64px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      & > h2 {
+        margin: 0 auto;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        max-width: 576px;
+        width: 566px;
+        text-align: center;
+
+        & > span {
+          font-weight: 800;
+          font-style: italic;
+          text-wrap: nowrap;
+        }
+      }
+
+      & > a {
+        margin: 30px auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 24px 12px;
+    &__header {
+      &__logo {
+        width: 109px;
+        height: 46px;
+      }
+      &__wrapper {
+        gap: 8px;
+        & > a {
+          border: 1px solid $main-green;
+          width: 100px;
+          height: 32px;
+          font-size: 13px;
+        }
+      }
+    }
+
+    &__wrapper {
+      & > h2 {
+        font-size: 26px;
+        max-width: 414px;
+      }
+    }
+  }
+}
