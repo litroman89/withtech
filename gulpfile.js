@@ -6,6 +6,8 @@ const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const htmlmin = require("gulp-htmlmin");
+const uglify = require("gulp-uglify"); // Минификация JavaScript
+const babel = require("gulp-babel"); // Транспиляция ES6+ в ES5
 
 async function getDel() {
   const { deleteAsync } = await import("del");
@@ -80,6 +82,19 @@ gulp.task("styles", function () {
     .pipe(browserSync.stream());
 });
 
+gulp.task("scripts", function () {
+  return gulp
+    .src("src/js/**/*.js") // Путь к вашим JS файлам
+    .pipe(
+      babel({
+        presets: ["@babel/env"],
+      })
+    ) // Транспиляция ES6+ в ES5
+    .pipe(uglify()) // Минификация JS
+    .pipe(gulp.dest("dist/js")) // Папка назначения для обработанных и минифицированных JS файлов
+    .pipe(browserSync.stream());
+});
+
 gulp.task("serve", function () {
   browserSync.init({
     server: {
@@ -89,8 +104,9 @@ gulp.task("serve", function () {
 
   gulp.watch(["src/**/*.html"], gulp.series("html"));
   gulp.watch(["src/**/*.scss"], gulp.series("styles")); // Наблюдаем за изменениями в SCSS
+  gulp.watch(["src/js/**/*.js"], gulp.series("scripts")); // Наблюдаем за изменениями в JS
   gulp.watch(["src/img/**/*.{png,jpg,jpeg,svg}"], gulp.series("clean", "images"));
 });
 
-gulp.task("default", gulp.series("clean", "images", "html", "styles", "serve"));
-gulp.task("build", gulp.series("clean", gulp.parallel("images", "html", "styles")));
+gulp.task("default", gulp.series("clean", "images", "html", "styles", "scripts", "serve"));
+gulp.task("build", gulp.series("clean", gulp.parallel("images", "html", "styles", "scripts")));
