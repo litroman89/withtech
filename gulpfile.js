@@ -5,6 +5,7 @@ const sass = require("gulp-sass")(require("sass")); // Компиляция SCSS
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
+const htmlmin = require("gulp-htmlmin");
 
 async function getDel() {
   const { deleteAsync } = await import("del");
@@ -29,6 +30,16 @@ gulp.task("html", function () {
       fileInclude({
         prefix: "@@",
         basepath: "@file",
+      })
+    )
+    .pipe(
+      htmlmin({
+        // Минимизация HTML
+        collapseWhitespace: true, // Убирает лишние пробелы
+        removeComments: true, // Удаляет комментарии
+        removeEmptyAttributes: true, // Удаляет пустые атрибуты
+        minifyJS: true, // Минимизирует JS внутри HTML
+        minifyCSS: true, // Минимизирует CSS внутри HTML
       })
     )
     .pipe(gulp.dest("dist"))
@@ -82,3 +93,4 @@ gulp.task("serve", function () {
 });
 
 gulp.task("default", gulp.series("clean", "images", "html", "styles", "serve"));
+gulp.task("build", gulp.series("clean", gulp.parallel("images", "html", "styles")));
