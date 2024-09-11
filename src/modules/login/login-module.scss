@@ -1,0 +1,139 @@
+.login {
+  padding-top: 16px;
+  position: relative;
+  .container {
+    margin: 0 auto;
+    max-width: 414px;
+    height: 100%;
+    padding: 0 16px;
+    display: grid;
+    place-items: center;
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  form {
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-family: $mont;
+      font-weight: 500;
+      font-size: 13px;
+      color: #2d2a26;
+    }
+
+    input {
+      margin-bottom: 12px;
+      border: 1px solid #9ca4bf;
+      border-radius: 4px;
+      padding: 8px 16px;
+      width: 382px;
+      height: 48px;
+      background: #f5f6fa;
+
+      font-family: $mont;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 185%;
+      color: #999dad;
+
+      &:last-of-type {
+        margin-bottom: 8px;
+      }
+    }
+
+    .password-wrapper {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+
+      img {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        right: 16px;
+        top: 16px;
+        cursor: pointer;
+      }
+
+      .hidden {
+        display: none;
+      }
+    }
+
+    .checkbox-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      input[type="checkbox"] {
+        border: 1px solid #2d2a26;
+        border-radius: 2px;
+        width: 18px;
+        height: 18px;
+      }
+
+      a {
+        font-family: $mont;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 117%;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        text-align: right;
+        color: #2826a5;
+      }
+    }
+
+    button[type="submit"] {
+      border-radius: 8px;
+      padding: 12px 24px;
+      width: 382px;
+      height: 42px;
+      background: #d3d4d6;
+    }
+  }
+
+  .toRegister {
+    margin-top: 8px;
+    font-family: $mont;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 117%;
+    text-align: center;
+    color: #2d2a26;
+
+    a {
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #2d2a26;
+    }
+  }
+
+  hr {
+    margin-top: 12px;
+    border: 0.5px solid #cbc7c7;
+    width: 382px;
+    height: 0px;
+  }
+
+  .terms-privacy {
+    margin-top: 12px;
+    font-family: $mont;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 160%;
+    text-align: center;
+    color: #2d2a26;
+
+    a {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #2d2a26;
+    }
+  }
+}

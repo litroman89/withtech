@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <meta name="description" content="Registration page">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.4.0/build/css/intlTelInput.css">
+</head>
+
+<body>
+    <main>
+        @@include("../../modules/register/register-module.html")
+    </main>
+    <!-- <script src="/js/main.js"></script> -->
+    <script src="/js/togglePassVisibility.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.4.0/build/js/intlTelInput.min.js"></script>
+    <script>
+        const input = document.querySelector("#phone");
+        window.intlTelInput(input, {
+            initialCountry: "auto",
+            separateDialCode: true,
+            geoIpLookup: callback => {
+                fetch("https://ipapi.co/json")
+                    .then(res => res.json())
+                    .then(data => callback(data.country_code))
+                    // .then(() => {
+                    //     const flagContainer = document.querySelector("iti__country-container");
+                    //     const countryBtn = document.querySelector("iti__selected-country");
+                    //     const countryCode = countryBtn.title.split(" ")[1];
+                    //     const paragraph = document.createElement("p");
+                    //     p.textContent = countryCode;
+
+                    //     flagContainer.appendChild(paragraph);
+                    // })
+                    .catch(() => callback("us"));
+            },
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.4.0/build/js/utils.js",
+        });
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<section class="login">
+    <div class="container">
+        <div class="login__header">
+            <button>
+                <img src="/img/login/support.svg" alt="support">
+            </button>
+            <button>
+                <img src="/img/login/close.svg" alt="close button">
+            </button>
+        </div>
+
+        <h2>ACCEDER</h2>
+
+        <form action="#">
+            <label for="name">Usuario o Correo Electrónico </label>
+            <input type="text" name="name" id="name" required>
+            <label for="password">Contraseña</label>
+            <div class="password-wrapper">
+                <input type="password" name="password" id="password" required>
+                <img class="openEye" src="/img/login/openEye.svg" alt="show password">
+                <img class="closedEye hidden" src="/img/login/closedEye.svg" alt="hide password">
+            </div>
+
+            <div class="checkbox-wrapper">
+                <input type="checkbox" name="remember" id="remember" required>
+                <a href="#">¿Has olvidado tu contraseña?</a>
+            </div>
+
+            <button type="submit">Acceder</button>
+
+            <div class="toRegister">
+                Nuevo en Winpot? <a href="/pages/register/register.html">Crear cuenta</a>
+            </div>
+
+            <hr>
+
+            <div class="terms-privacy">
+                Registrarte o crear tu cuenta significa que estás de acuerdo con <a href="#">Los términos y
+                    condiciones</a> & <a href="#">La política de privacidad.</a>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,76 @@
+<section class="register">
+    <div class="container">
+        <div class="register__header">
+            <button>
+                <img src="/img/register/support.svg" alt="support">
+            </button>
+            <img src="/img/register/stepper.svg" alt="first step">
+            <button>
+                <img src="/img/register/close.svg" alt="close button">
+            </button>
+        </div>
+
+        <img src="/img/register/deposit.png" alt="deposit" class="deposit">
+
+        <h2>Abrir una cuenta!</h2>
+
+        <form action="#">
+            <label for="email">Correo electrónico <span>(Para recibir ofertas exclusivas)</span></label>
+            <input type="email" name="email" id="email" placeholder="p. ej. juan123@gmail.com" required>
+            <label for="password" placeholder="Contraseña segura">Contraseña</label>
+            <div class="password-wrapper">
+                <input type="password" name="password" id="password" placeholder="Contraseña segura" required>
+                <img class="openEye" src="/img/register/openEye.svg" alt="show password">
+                <img class="closedEye hidden" src="/img/register/closedEye.svg" alt="hide password">
+            </div>
+
+            <div class="requirements">
+                <div class="requirements__item">
+                    <img src="/img/register/check.svg" alt="check">
+                    <p>8-30 caracteres</p>
+                </div>
+                <div class="requirements__item">
+                    <img src="/img/register/notFilled.svg" alt="need to fille">
+                    <p>Sin espacios</p>
+                </div>
+                <div class="requirements__item">
+                    <img src="/img/register/default.svg" alt="default">
+                    <p>Un número</p>
+                </div>
+                <div class="requirements__item">
+                    <img src="/img/register/default.svg" alt="default">
+                    <p>Una letra mayúscula</p>
+                </div>
+                <div class="requirements__item">
+                    <img src="/img/register/default.svg" alt="default">
+                    <p>Una letra minúscula</p>
+                </div>
+            </div>
+
+            <label for="phone">Número de teléfono <span>(Se enviara un codigo de activacion)</span></label>
+            <div class="phone-wrapper">
+                <input type="number" name="phone" id="phone" placeholder="p. ej. 7911 123456" required>
+            </div>
+
+            <div class="checkbox-wrapper">
+                <input type="checkbox" name="accept" id="accept">
+                <p>Acepto recibir boletines, información promocional y actualizaciones de productos por correo
+                    electrónico o sms</p>
+            </div>
+
+            <button type="submit">Siguiente</button>
+
+
+        </form>
+        <div class="toLogin">
+            ¿Ya tiene una cuenta? <a href="/pages/login/login.html">Acceder</a>
+        </div>
+
+        <hr>
+
+        <div class="terms-privacy">
+            Registrarte o crear tu cuenta significa que estás de acuerdo con <a href="#">Los términos y
+                condiciones</a> & <a href="#">La política de privacidad.</a>
+        </div>
+    </div>
+</section>

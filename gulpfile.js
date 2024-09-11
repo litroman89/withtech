@@ -27,7 +27,7 @@ gulp.task("clean", async function () {
 
 gulp.task("html", function () {
   return gulp
-    .src(["src/*.html"])
+    .src(["src/**/*.html"])
     .pipe(
       fileInclude({
         prefix: "@@",
